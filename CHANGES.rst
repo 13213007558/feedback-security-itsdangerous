@@ -5,6 +5,9 @@ Unreleased
 
 -   Drop support for Python 3.8 and 3.9.
 -   Remove previously deprecated code.
+-   Add ``key_windows`` to ``TimestampSigner`` and ``TimedSerializer``
+    to bound each rotated key's signing and verifying lifetime. Add
+    ``KeyWindow``, ``KeyWindowViolation``, and ``NoSigningKeyError``.
 
 
 Version 2.2.0

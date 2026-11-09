@@ -15,6 +15,12 @@ Exceptions
 .. autoexception:: SignatureExpired
     :members:
 
+.. autoexception:: KeyWindowViolation
+    :members:
+
+.. autoexception:: NoSigningKeyError
+    :members:
+
 .. autoexception:: BadHeader
     :members:
 

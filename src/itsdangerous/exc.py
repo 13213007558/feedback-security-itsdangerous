@@ -63,6 +63,26 @@ class SignatureExpired(BadTimeSignature):
     """
 
 
+class KeyWindowViolation(BadTimeSignature):
+    """Raised if a signature is valid but rejected by the rotation
+    window of the key that produced it. Either the token's authenticated
+    signing time is outside the key's signing window, or the key has
+    passed its ``verify_until`` time. This is a subclass of
+    :exc:`BadTimeSignature`.
+
+    .. versionadded:: 2.3
+    """
+
+
+class NoSigningKeyError(BadData):
+    """Raised when signing is attempted but no configured secret key is
+    allowed to sign at the current time, based on the ``key_windows``
+    configuration.
+
+    .. versionadded:: 2.3
+    """
+
+
 class BadHeader(BadSignature):
     """Raised if a signed header is invalid in some form. This only
     happens for serializers that have a header that goes with the
